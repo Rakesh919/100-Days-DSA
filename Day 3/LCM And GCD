@@ -1,0 +1,33 @@
+Given two numbers A and B. The task is to find out their LCM and GCD
+
+
+Example 1:
+
+Input:
+A = 5 , B = 10
+Output:
+10 5
+Explanation:
+LCM of 5 and 10 is 10, while
+thier GCD is 5.
+
+
+class Solution {
+    static Long[] lcmAndGcd(Long A , Long B) {
+        long ans = gcd(A, B);
+        long lcm = (A * B) / ans;
+
+        Long[] arr = new Long[2];
+        arr[0] = lcm;
+        arr[1] = ans;
+
+        return arr;
+    }
+
+    static long gcd(long a, long b) {
+        if (b == 0) {
+            return a;
+        }
+        return gcd(b, a % b);
+    }
+}
