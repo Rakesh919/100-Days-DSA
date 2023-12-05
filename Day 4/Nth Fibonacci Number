@@ -1,0 +1,35 @@
+Given a positive integer n, find the nth fibonacci number. Since the answer can be very large, return the answer modulo 1000000007.
+
+
+Example 1:
+
+Input: 
+n = 2
+Output: 
+1 
+Explanation: 
+1 is the 2nd number of fibonacci series.
+
+
+
+
+//User function Template for Java
+
+//User function Template for Java
+class Solution {
+    static int nthFibonacci(int n){
+        if (n == 0)
+            return 0;
+        if (n == 1 || n == 2)
+            return 1;
+        int first = 1;
+        int second = 1;
+        //  long mod = 10000000007;
+        for (int i = 3; i <= n; ++i) {
+            int tmp = first + second;
+            first = second;
+            second= tmp % 1000000007;
+        }
+        return second;
+    }
+}
