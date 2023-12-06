@@ -1,0 +1,30 @@
+For a given number N check if it is prime or not. A prime number is a number which is only divisible by 1 and itself.
+
+
+Example 1:
+
+Input:
+N = 5
+Output:
+1
+Explanation:
+5 has 2 factors 1 and 5 only.
+
+
+
+
+class Solution{
+    static int isPrime(int N){
+        // code here
+        
+        if(N<2)
+        return 0;
+        int a =(int)Math.sqrt(N);
+        
+        for(int i=2;i<=a;i++){
+            if(N%i==0)
+            return 0;
+        }
+        return 1;
+    }
+}
