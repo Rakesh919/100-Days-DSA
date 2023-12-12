@@ -1,0 +1,27 @@
+Given a positive integer N, write a function to find if it is a power of three or not.
+
+
+Example 1:
+
+Input:
+N = 3
+Output:
+Yes
+Explanation:
+31 is a power of 3.
+
+
+class Solution{
+    static String isPowerof3(int N){
+        // code here
+        
+         for(int i = 0; i<32; i++){
+          
+            if( Math.pow(3,i)== N){
+                return "Yes";
+            }
+        }
+        return "No";
+    
+    }
+}
