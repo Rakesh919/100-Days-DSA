@@ -1,0 +1,46 @@
+Given a decimal number N, compute its binary equivalent.
+
+Example 1:
+
+Input: N = 7
+Output: 111
+
+
+Solution 1:
+
+class Solution{
+	void toBinary(int N) {
+		//Write your code here
+		String b = " ";
+		while(N >= 1){
+		int x = N % 2;
+		N = N / 2;
+		b = x + b;
+		}
+	    System.out.print(b);
+	}
+}
+
+
+Solution 2:
+
+class Solution {
+    void toBinary(int N) {
+        int[] binaryNum = new int[32];
+        
+        int i = 0;
+        
+        if (N < 0) {
+            System.out.println("Binary representation of negative numbers is not supported.");
+            return;
+        }
+        while (N > 0) {
+            binaryNum[i] = N % 2;
+            N = N / 2;
+            i++;
+        }
+        for (int j = i - 1; j >= 0; j--) {
+            System.out.print(binaryNum[j]);
+        }
+    }
+}
